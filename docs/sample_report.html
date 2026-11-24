@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scan report — http://127.0.0.1:5055</title>
+<style>
+  :root { --bg:#0d1117; --panel:#161b22; --panel2:#1c2230; --border:#2a3140;
+           --text:#e6edf3; --muted:#8b93a7; --mono:ui-monospace,Menlo,Consolas,monospace; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+          font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; line-height:1.5; }
+  .wrap { max-width:1000px; margin:0 auto; padding:32px 24px 60px; }
+  h1 { font-size:22px; margin:0 0 4px; }
+  .target { font-family:var(--mono); color:#58a6ff; font-size:14px; }
+  .meta { color:var(--muted); font-size:13px; margin:6px 0 24px; }
+  .cards { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:18px; }
+  .card { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:18px; text-align:center; }
+  .card .n { font-size:34px; font-weight:700; line-height:1; }
+  .card .l { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.6px; margin-top:6px; }
+  .sevbar { display:flex; height:12px; border-radius:6px; overflow:hidden; border:1px solid var(--border); margin-bottom:26px; }
+  .sevbar div { height:100%; }
+  table { width:100%; border-collapse:collapse; background:var(--panel); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  th { text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); padding:12px; background:var(--panel2); }
+  td { padding:13px 12px; border-top:1px solid var(--border); vertical-align:top; font-size:14px; }
+  .sev { display:inline-block; padding:2px 10px; border-radius:999px; font-size:12px; font-weight:700; border:1px solid; }
+  .cat { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.5px; margin-top:3px; }
+  .url { font-family:var(--mono); font-size:12px; color:#58a6ff; word-break:break-all; max-width:230px; }
+  code { font-family:var(--mono); font-size:12px; background:#0000003d; border:1px solid var(--border); border-radius:5px; padding:1px 6px; word-break:break-all; }
+  .pl { color:var(--muted); font-size:12px; margin-top:5px; }
+  .empty { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:30px; text-align:center; color:#3fb950; }
+  footer { color:var(--muted); font-size:12px; margin-top:24px; text-align:center; }
+</style></head>
+<body><div class="wrap">
+  <h1>Web Security Scan Report</h1>
+  <div class="target">http://127.0.0.1:5055</div>
+  <div class="meta">Scanned 2026-11-24 06:24:16 &middot; 4 page(s) &middot; 26 finding(s)</div>
+  <div class="cards"><div class="card"><div class="n" style="color:#e5484d">1</div><div class="l">High</div></div><div class="card"><div class="n" style="color:#f5a623">8</div><div class="l">Medium</div></div><div class="card"><div class="n" style="color:#4a9eda">13</div><div class="l">Low</div></div><div class="card"><div class="n" style="color:#8b93a7">4</div><div class="l">Info</div></div></div>
+  <div class="sevbar"><div style="width:3.8%;background:#e5484d" title="High: 1"></div><div style="width:30.8%;background:#f5a623" title="Medium: 8"></div><div style="width:50.0%;background:#4a9eda" title="Low: 13"></div><div style="width:15.4%;background:#8b93a7" title="Info: 4"></div></div>
+  <table><thead><tr><th>Severity</th><th>Finding</th><th>Location</th><th>Detail</th></tr></thead><tbody>
+        <tr>
+          <td><span class="sev" style="background:#e5484d22;color:#e5484d;border-color:#e5484d55">High</span></td>
+          <td><strong>SQL Injection</strong><div class="cat">injection</div></td>
+          <td class="url">http://127.0.0.1:5055/product</td>
+          <td>Parameter &#x27;id&#x27; returned a database error when injected.<div class="pl">payload: <code>&#x27; OR &#x27;1&#x27;=&#x27;1</code></div> <code>You have an error in your SQL syntax</code></td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">Medium</span></td>
+          <td><strong>Missing Content-Security-Policy</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055</td>
+          <td>No CSP; the page has no policy restricting script/content sources.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">Medium</span></td>
+          <td><strong>Missing Content-Security-Policy</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/login</td>
+          <td>No CSP; the page has no policy restricting script/content sources.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">Medium</span></td>
+          <td><strong>Cookie missing HttpOnly</strong><div class="cat">cookies</div></td>
+          <td class="url">http://127.0.0.1:5055/login</td>
+          <td>Cookie &#x27;session&#x27; is readable by JavaScript.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">Medium</span></td>
+          <td><strong>Form without CSRF token</strong><div class="cat">csrf</div></td>
+          <td class="url">http://127.0.0.1:5055/login</td>
+          <td>POST form to &#x27;http://127.0.0.1:5055/login&#x27; has no hidden token field.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">Medium</span></td>
+          <td><strong>Missing Content-Security-Policy</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/product?id=1</td>
+          <td>No CSP; the page has no policy restricting script/content sources.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">Medium</span></td>
+          <td><strong>Reflected XSS</strong><div class="cat">injection</div></td>
+          <td class="url">http://127.0.0.1:5055/product</td>
+          <td>Parameter &#x27;id&#x27; reflects input without HTML-encoding.<div class="pl">payload: <code>wvs7x9&lt;&quot;&gt;z</code></div> <code>wvs7x9&lt;&quot;&gt;z</code></td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">Medium</span></td>
+          <td><strong>Missing Content-Security-Policy</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/search?q=test</td>
+          <td>No CSP; the page has no policy restricting script/content sources.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#f5a62322;color:#f5a623;border-color:#f5a62355">Medium</span></td>
+          <td><strong>Reflected XSS</strong><div class="cat">injection</div></td>
+          <td class="url">http://127.0.0.1:5055/search</td>
+          <td>Parameter &#x27;q&#x27; reflects input without HTML-encoding.<div class="pl">payload: <code>wvs7x9&lt;&quot;&gt;z</code></div> <code>wvs7x9&lt;&quot;&gt;z</code></td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing X-Frame-Options</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055</td>
+          <td>No framing protection; the page may be vulnerable to clickjacking.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing X-Content-Type-Options</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055</td>
+          <td>Missing &#x27;nosniff&#x27;; browsers may MIME-sniff responses.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing Referrer-Policy</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055</td>
+          <td>No referrer policy; full URLs may leak to other sites.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing X-Frame-Options</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/login</td>
+          <td>No framing protection; the page may be vulnerable to clickjacking.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing X-Content-Type-Options</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/login</td>
+          <td>Missing &#x27;nosniff&#x27;; browsers may MIME-sniff responses.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing Referrer-Policy</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/login</td>
+          <td>No referrer policy; full URLs may leak to other sites.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Cookie missing SameSite</strong><div class="cat">cookies</div></td>
+          <td class="url">http://127.0.0.1:5055/login</td>
+          <td>Cookie &#x27;session&#x27; has no SameSite attribute (CSRF risk).</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing X-Frame-Options</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/product?id=1</td>
+          <td>No framing protection; the page may be vulnerable to clickjacking.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing X-Content-Type-Options</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/product?id=1</td>
+          <td>Missing &#x27;nosniff&#x27;; browsers may MIME-sniff responses.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing Referrer-Policy</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/product?id=1</td>
+          <td>No referrer policy; full URLs may leak to other sites.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing X-Frame-Options</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/search?q=test</td>
+          <td>No framing protection; the page may be vulnerable to clickjacking.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing X-Content-Type-Options</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/search?q=test</td>
+          <td>Missing &#x27;nosniff&#x27;; browsers may MIME-sniff responses.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#4a9eda22;color:#4a9eda;border-color:#4a9eda55">Low</span></td>
+          <td><strong>Missing Referrer-Policy</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/search?q=test</td>
+          <td>No referrer policy; full URLs may leak to other sites.</td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#8b93a722;color:#8b93a7;border-color:#8b93a755">Info</span></td>
+          <td><strong>Info disclosure: server</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055</td>
+          <td>Response reveals &#x27;server: Werkzeug/3.1.9 Python/3.13.18&#x27;. <code>Werkzeug/3.1.9 Python/3.13.18</code></td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#8b93a722;color:#8b93a7;border-color:#8b93a755">Info</span></td>
+          <td><strong>Info disclosure: server</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/login</td>
+          <td>Response reveals &#x27;server: Werkzeug/3.1.9 Python/3.13.18&#x27;. <code>Werkzeug/3.1.9 Python/3.13.18</code></td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#8b93a722;color:#8b93a7;border-color:#8b93a755">Info</span></td>
+          <td><strong>Info disclosure: server</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/product?id=1</td>
+          <td>Response reveals &#x27;server: Werkzeug/3.1.9 Python/3.13.18&#x27;. <code>Werkzeug/3.1.9 Python/3.13.18</code></td>
+        </tr>
+        <tr>
+          <td><span class="sev" style="background:#8b93a722;color:#8b93a7;border-color:#8b93a755">Info</span></td>
+          <td><strong>Info disclosure: server</strong><div class="cat">headers</div></td>
+          <td class="url">http://127.0.0.1:5055/search?q=test</td>
+          <td>Response reveals &#x27;server: Werkzeug/3.1.9 Python/3.13.18&#x27;. <code>Werkzeug/3.1.9 Python/3.13.18</code></td>
+        </tr></tbody></table>
+  <footer>Generated by web-vuln-scanner &middot; for authorized testing only</footer>
+</div></body></html>
